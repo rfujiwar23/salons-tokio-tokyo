@@ -1,0 +1,90 @@
+
+<p id="notice"><%= notice %></p>
+
+<h1>Salons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Comment</th>
+      <th>Tokio</th>
+      <th>Ie</th>
+      <th>Design</th>
+      <th>Straight</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @salons.each do |salon| %>
+      <tr>
+        <td><%= salon.name %></td>
+        <td><%= salon.address %></td>
+        <td><%= salon.phone %></td>
+        <td><%= salon.comment %></td>
+        <td><%= salon.tokio %></td>
+        <td><%= salon.ie %></td>
+        <td><%= salon.design %></td>
+        <td><%= salon.straight %></td>
+        <td><%= link_to 'Show', salon %></td>
+        <td><%= link_to 'Edit', edit_salon_path(salon) %></td>
+        <td><%= link_to 'Destroy', salon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="row">
+<% @salons.each do |salon| %>
+<div class="col-md-4 col-sm-12 salon">
+  <ul class="list_of_products">
+    <li><% if salon.tokio == true %>
+        TOKIO
+        <% end %>
+    </li>
+    <li><% if salon.ie == true %>
+        IE
+        <% end %>
+    </li>
+    <li><% if salon.design == true %>
+        Design
+        <% end %>
+    </li>
+    <li><% if salon.straight == true %>
+        Straight
+        <% end %>
+    </li>
+  </ul>
+<table>
+  <tr>
+    <td class="title">店舗名</td>
+    <td><%= salon.name %></td>
+  </tr>
+  <tr>
+    <td class="title">住所</td>
+    <td><%= salon.address %></td>
+  </tr>
+  <tr>
+    <td class="title">TEL</td>
+    <td><%= salon.phone %></td>
+  </tr>
+  <tr>
+    <td class="title">コメント</td>
+    <td><%= salon.comment %></td>
+  </tr>
+</table>
+<%= link_to 'サロン情報を見る', salon, class: 'btn btn-info' %>
+<%= link_to '編集', edit_salon_path(salon), class: 'btn btn-primary' %>
+<%= link_to '削除', salon, method: :delete, class: 'btn btn-warning', data: { confirm: '削除します。よろしいですか?' } %>
+</div>
+<% end %>
+</div>
+
+
+<%= link_to 'サロン登録をする', new_salon_path %>
+

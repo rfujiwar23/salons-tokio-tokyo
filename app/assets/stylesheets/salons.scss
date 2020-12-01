@@ -1,0 +1,28 @@
+// Place all the styles related to the Salons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.salon {
+  border:1px solid #000;
+  table {
+    td.title {
+      width:100px;
+    }
+  }
+  .list_of_products {
+    list-style-type: none;
+    margin-top:2vh;
+    li {
+      display: inline-block;
+      border:1px solid black;
+      padding:5px 10px;
+    }
+  }
+}
+
+.btn {
+  .btn-primary {
+    color: white;
+  }
+}

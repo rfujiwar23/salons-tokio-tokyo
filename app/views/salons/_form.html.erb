@@ -1,0 +1,57 @@
+<%= form_with(model: salon, local: true) do |form| %>
+  <% if salon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(salon.errors.count, "error") %> prohibited this salon from being saved:</h2>
+
+      <ul>
+        <% salon.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tokio %>
+    <%= form.check_box :tokio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ie %>
+    <%= form.check_box :ie %>
+  </div>
+
+  <div class="field">
+    <%= form.label :design %>
+    <%= form.check_box :design %>
+  </div>
+
+  <div class="field">
+    <%= form.label :straight %>
+    <%= form.check_box :straight %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
