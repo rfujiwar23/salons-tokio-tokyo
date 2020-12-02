@@ -28,7 +28,7 @@ class SalonsController < ApplicationController
 
     respond_to do |format|
       if @salon.save
-        format.html { redirect_to @salon, notice: 'Salon was successfully created.' }
+        format.html { redirect_to @salon, notice: '新規サロン登録されました。' }
         format.json { render :show, status: :created, location: @salon }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SalonsController < ApplicationController
   def update
     respond_to do |format|
       if @salon.update(salon_params)
-        format.html { redirect_to @salon, notice: 'Salon was successfully updated.' }
+        format.html { redirect_to @salon, notice: 'サロン情報の編集しました。' }
         format.json { render :show, status: :ok, location: @salon }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class SalonsController < ApplicationController
   def destroy
     @salon.destroy
     respond_to do |format|
-      format.html { redirect_to salons_url, notice: 'Salon was successfully destroyed.' }
+      format.html { redirect_to salons_url, notice: 'サロン情報を削除しました。' }
       format.json { head :no_content }
     end
   end

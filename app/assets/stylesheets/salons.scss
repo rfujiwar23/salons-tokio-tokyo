@@ -26,3 +26,17 @@
     color: white;
   }
 }
+
+.card {
+  margin:2vh auto;
+  h6 {
+    padding-left:20px;
+    margin-top:1vh;
+  }
+  .card-footer {
+    color: blue;
+    .links_to {
+      color: blue;
+    }
+  }
+}
