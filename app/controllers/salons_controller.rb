@@ -25,6 +25,7 @@ class SalonsController < ApplicationController
   # POST /salons.json
   def create
     @salon = Salon.new(salon_params)
+    @salon.image.attach(salon_params[:image])
 
     respond_to do |format|
       if @salon.save
@@ -40,6 +41,9 @@ class SalonsController < ApplicationController
   # PATCH/PUT /salons/1
   # PATCH/PUT /salons/1.json
   def update
+    @salon.image.purge
+    @salon.image.attach(salon_params[:image])
+
     respond_to do |format|
       if @salon.update(salon_params)
         format.html { redirect_to @salon, notice: 'サロン情報の編集しました。' }
@@ -69,6 +73,6 @@ class SalonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def salon_params
-      params.require(:salon).permit(:name, :address, :phone, :comment, :tokio, :ie, :design, :straight)
+      params.require(:salon).permit(:name, :address, :phone, :comment, :tokio, :ie, :design, :straight, :image)
     end
 end

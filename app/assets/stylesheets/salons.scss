@@ -38,5 +38,13 @@
     .links_to {
       color: blue;
     }
+    .links_to:hover {
+      color: white;
+      background:red;
+    }
   }
+}
+
+.salon-pic {
+  margin-top:10px;
 }

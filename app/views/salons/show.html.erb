@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <% if @salon.image.attached? %>
+    <p>
+      <strong>Image:</strong>
+      <br>
+      <%= image_tag @salon.image %>
+    </p>
+  <% end %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @salon.name %>
 </p>
