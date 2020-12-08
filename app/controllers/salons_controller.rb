@@ -4,7 +4,7 @@ class SalonsController < ApplicationController
   # GET /salons
   # GET /salons.json
   def index
-    @salons = Salon.all
+    @salons = Salon.search(params[:search])
   end
 
   # GET /salons/1
