@@ -1,0 +1,10 @@
+<h1>Search Results</h1>
+<p><%= link_to "Back", new_search_path %></p>
+
+
+
+<% if @search.search_salon.empty? %>
+    <p>検索に該当するサロンは見つかりませんでした</p>
+<% else %>
+    <p>見つかりました！</p>
+<% end %>

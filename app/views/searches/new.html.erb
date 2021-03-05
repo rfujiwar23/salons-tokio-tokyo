@@ -1,0 +1,13 @@
+<h1>Advanced Search</h1>
+
+<%= form_with model: @search do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :address %>
+    <%= f.select :address, options_for_select(@address), include_blank: true %><br>
+
+    <%= f.submit "Search" %>
+<% end %>
+
+<p><%= link_to "Back", '/salons' %></p>

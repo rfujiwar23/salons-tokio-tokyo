@@ -43,11 +43,6 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    <%= form_with(url: '/salons', method: 'get', local: true) do %>
-    <%= text_field_tag(:search) %>
-    <%= submit_tag("検索") %>
-    <%= link_to "戻る", '/salons' %>
-    <% end %>
   </div>
 </nav>
     <div class="container">
